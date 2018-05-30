@@ -1,3 +1,3 @@
 # Isa
 
-![picture alt](https://ibb.co/k6j0yJ)
+[Imgur](https://i.imgur.com/0E61qtF.png)
