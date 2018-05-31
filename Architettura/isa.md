@@ -15,10 +15,10 @@ Gli operandi byte, const, e varnum hanno dimensione di 1 byte, disp, index, e of
 ![Stack](https://i.imgur.com/fENxhLr.png\))
 
 Contiene:
-- puntatori di servizio, necessari per il meccanismo di all’atto della sua chiamata;
-- parametri passati al programma (o al sotto
+- puntatori di servizio, necessari per il meccanismo di chiamata/ritorno di metodi (sottoprogrammi)
+- parametri passati al programma (o al sotto programma) all’atto della sua chiamata
 - lo spazio riservato per le variabili locali.
-- Il registro **LV**, contenuto nella CPU, viene usato per puntare alla base dello stack di esecuzione della procedura correntemente in esecuzione
+- Il registro **LV**, contenuto nella CPU, viene usato per puntare alla base dello stack di esecuzione della procedura correntemente in esecuzione.
 
 ### Registri
 
