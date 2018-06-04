@@ -42,7 +42,7 @@ Il bit piu' significativo (Addr[8]) si calcola:
 
 (JAMN and N) or (JAMZ and Z) or Addr[8]
 
-Se JMPC == 1 MPC = MPC or MBR. In MBR c'e' l'*opcode* dell'istruzione. Solitamente quando JMPC == 1 MPC == 0x000 or 0x100
+Se JMPC == 1 MPC = (MPC or MBR). In MBR c'e' l'*opcode* dell'istruzione. Solitamente quando JMPC == 1 MPC == 0x000 o 0x100
 
 ### MAL (Micro Assembly Language)
 
