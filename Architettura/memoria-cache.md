@@ -5,6 +5,8 @@
 
 **Principio di localita'**: I programmi non accedono casualmente alla memoria ma fanno sempre uso di un set di indirizzi.
 
+### Cache
+
 ![Blocchi cache](https://i.imgur.com/VNnnI4q.png)
 
 
