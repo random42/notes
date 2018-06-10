@@ -39,4 +39,8 @@ Definita'
 
 #### Round-robin
 
-Ideato per sistemi *time-sharing*.
+Ideato per sistemi *time-sharing*. Coda FCFS ma con un **quanto** di tempo assegnato a ogni processo.
+
+### Code multilivello
+
+La ready queue e' suddivisa in piu' code a seconda delle caratteristiche dei processi (es. *foreground*, *background*). Ogni coda ha una priorita' e un proprio algoritmo di scheduling.

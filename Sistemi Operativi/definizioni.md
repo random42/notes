@@ -10,3 +10,5 @@ Swapping (processi) | Trasferimento dei PCB da e in memoria secondaria
 Prelazione | Possibilita' di togliere una risorsa a un processo che la sta utilizzando e la utilizzera' (CPU, I/O, file...)
 Starvation | Processo che non ottiene CPU per bassa priorita'
 Aging | Aumento di priorita' dei processi nel tempo
+Fork bomb / wabbit | Processo che crea troppi processi
+Thread join | Attendere la terminazione di un altro thread
