@@ -100,18 +100,86 @@ Non c'e' l'**attesa limitata**.
 
 ### Semafori
 
-Variabili intere gestite dal SO. Quando un processo attende il semaforo esegue una **wait**, quando lo rilascia esegue **signal**.
+Variabili intere gestite dal SO. Quando un processo attende il semaforo esegue una **wait** (**P**), quando lo rilascia esegue **signal** (**V**).
+
 
 ```
-wait(S) {
+P(S) {
   while (S <= 0) no_op;
   S--;
 }
 
-signal(S) {
+V(S) {
   S++;
 }
 ```
 
-Al semaforo viene associata la lista dei processi che attendono su di esso. Quando viene incrementato viene scelto un processo e 
-Dopo la *wait* il processo viene messo in stato *waiting*.
+Al semaforo viene associata la lista dei processi che attendono su di esso. Dopo la *wait* su un semaforo a 0 il processo viene messo in stato *waiting*. Quando il semaforo viene incrementato il SO sceglie un processo che attende sul semaforo e lo mette in coda *ready*.
+
+
+### Problemi di sincronizzazione
+
+#### Produttore/consumatore
+
+3 semafori
+
+**Produttore**:
+```
+<produci un nuovo elemento>
+P(libere);
+P(mutex);
+<inserisci nuovo elemento>
+V(mutex);
+V(occupate);
+```
+
+**Consumatore**:
+```
+P(occupate);
+P(mutex);
+<estrai elemento>
+V(mutex);
+V(libere);
+<consuma elemento>
+```
+
+
+#### Lettori/scrittori
+
+- mutex: mutex per scrivere in numlettori
+- scrittura: mutex di scrittura
+
+Lettore:
+```
+P(mutex);
+numlettori++;
+if (numlettori == 1)
+   P(scrittori);
+V(mutex);
+<legge>
+P(mutex);
+numlettori­­;
+if (numlettori == 0)
+   V(scrittura);
+V(mutex);
+```
+
+Scrittore:
+```
+P(scrittura);
+<scrive>
+V(scrittura);
+```
+
+#### Cinque filosofi
+
+> 5 filosofi passano il tempo seduti intorno a un tavolo pensando e mangiando a fasi alterne. Per mangiare un filosofo ha bisogno di due posate ma ci sono solo cinque posate in tutto
+
+Soluzioni semplici danno vita a **deadlock** e **starvation**.
+
+Si possono usare degli *stati* associati alle posate.
+
+
+### Transazioni
+
+Per database etc. servono transazioni atomiche con un **logfile** per eventuali crash.

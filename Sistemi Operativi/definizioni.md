@@ -12,3 +12,9 @@ Starvation | Processo che non ottiene CPU per bassa priorita'
 Aging | Aumento di priorita' dei processi nel tempo
 Fork bomb / wabbit | Processo che crea troppi processi
 Thread join | Attendere la terminazione di un altro thread
+Spinlock | Attesa attiva
+Transazione | Sequenza di *read* e *write* che si conclude con *commit* o *abort*
+Commit | Transazione conclusa con successo
+Abort | Transazione fallita
+Rollback | Tornare a uno stato precedente
+Deadlock | Stallo dovuto a un'attesa circolare di risorse
