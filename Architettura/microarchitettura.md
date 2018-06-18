@@ -25,7 +25,7 @@ Quando si esegue una lettura nel ciclo *k*, la parola sara' disponibile dal cicl
 
 36 bit per istruzione.
 
-|Bit|Uso
+Nome|Bit|Uso
 -|-|-
 Next address | 9 | Indirizzo della prossima istruzione
 JAM | 3 | Serve a decidere Next address (per gli *if*)
