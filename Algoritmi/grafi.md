@@ -1,4 +1,4 @@
-## Grafi
+# Grafi
 
 G = (V, E)
 V = vertici
@@ -6,16 +6,17 @@ E = archi -> (u,v)
 
 Cappio = arco (v,v)
 
-orientato: archi con verso
-non orientato: archi in entrambi i versi (u,v) == (v,u)
-aciclico:
+- orientato: archi con verso
+- non orientato: archi in entrambi i versi (u,v) == (v,u)
+- aciclico: puoi immaginare
+- connesso: esiste un cammino tra ogni coppia di vertici
 
 ### Rappresentazione
 
-Liste di adiacenza: array di vertici, a ogni vertice c'e' la lista con i vertici adiacenti
-Matrice di adiacenza: m[u][v] == 1 && (u,v) appartiene a E
+- **Liste di adiacenza**: array di vertici, a ogni vertice c'e' la lista con i vertici adiacenti
+- **Matrice di adiacenza**: m[u][v] == 1 && (u,v) appartiene a E
 
-### Visita in ampiezza (breadth-first search)
+## Visita in ampiezza (breadth-first search)
 
 **O(V + E)**
 ```
@@ -34,7 +35,7 @@ BFS(G, s) {
   while (Q.length > 0) {
     u = dequeue(Q);
     // per ogni vertice adiacente a u
-    for (v in adj[]) {
+    for (v in adj[u]) {
       if (v.color == WHITE) {
         v.color = GRAY;
         v.d = u.d + 1;
@@ -49,7 +50,7 @@ BFS(G, s) {
 
 Si ha la distanza minima da ogni vertice a s contenuta in d.
 
-### Visita in profondita' (depth-first search)
+## Visita in profondita' (depth-first search)
 
 **O(V + E)**
 
@@ -116,7 +117,8 @@ Ogni componente e' un albero di DF G~t
 ## Alberi di connessione minimi
 
 Dato un grafo non orientato.
-E = tutte le possibili connessioni in V, con un peso associato
+
+E = tutte le possibili connessioni in V, con peso associato
 
 Problema: trovare un sottoinsieme aciclico di E che collega tutti i vertici con peso totale minimo.
 
@@ -128,8 +130,13 @@ Sono algoritmi greedy.
 Taglio = partizione di V
 Arco leggero = arco con peso minimo tra quelli che attraversano il taglio
 
+
+### Kruskal
+
+Ordina gli archi in ordine crescente per costo, e per ogni arco se i vertici non sono nello stesso *set*, li unisce nello stesso set e aggiunge l'arco al risultato.
+
 ```
-MST-Kruskal(G, w) {
+MST-Kruskal(G, w = funzione peso) {
   A = [];
   for (v in G.V) {
     makeSet(v);
@@ -142,5 +149,60 @@ MST-Kruskal(G, w) {
     }
   }
   return A;
+}
+```
+
+### Prim
+
+Algoritmo goloso. Crea un albero.
+
+```
+MST-Prim(G, w, r = radice) {
+  for (u in G.V) {
+    u.key = Infinity; // peso minimo di un arco che collega u a un vertice dell'albero
+    u.pi = NIL; // padre
+  }
+  r.key = 0;
+  Q = G.V; // coda di priorita' min (di key)
+  while (Q.length > 0) {
+    u = extractMin(Q);
+    for (v in G.Adj[u]) {
+      // se il peso dell'arco (u,v) e' minore del peso minimo fin'ora trovato
+      // v entra nell'albero
+      if (v isIn Q && w(u,v) < v.key) {
+        v.pi = u;
+        v.key = w(u,v);
+      }
+    }
+  }
+}
+```
+
+## Cammini minimi
+
+Se esistono pesi negativi e ci sono cicli negativi il cammino minimo tra una sorgente e un vertice del ciclo e' -Infinity.
+
+L'algoritmo di Dijkstra usa pesi positivi, quello di Bellman-Ford anche negativi ma segnala se ci sono cicli negativi.
+
+Un albero di cammini minimi con sorgente *s* contiene tutti i cammini minimi tra *s* e i vertici raggiungibili da *s*. Simile alla ricerca in ampiezza ma con cammini misurati per peso.
+
+### Rilassamento
+
+Semplicemente si inizializza ogni vertice con il peso del cammino minimo e il predecessore
+
+```
+Initialize-Single-Source(G, s) {
+  for (v in G.V) {
+    v.d = Infinity; // peso del cammino da s
+    v.pi = NIL; // predecessore
+  }
+}
+
+Relax(u,v,w) {
+  // se il peso di questo cammino e' minore del peso corrente
+  if (v.d > u.d + w(u,v)) {
+    v.d = u.d + w(u,v);
+    v.pi = u;
+  }
 }
 ```
