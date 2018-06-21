@@ -99,6 +99,7 @@ Archi trasversali | vertici non discendenti dello stesso albero o tra alberi div
 
 Ordine lineare di vertici in un **grafo orientato aciclico** per cui v[i].f > v[j].f && j > i
 Usato per ordinare gli eventi.
+
 Algoritmo: DFS, quando il vertice diventa BLACK lo si aggiunge in testa alla lista.
 
 
@@ -203,6 +204,42 @@ Relax(u,v,w) {
   if (v.d > u.d + w(u,v)) {
     v.d = u.d + w(u,v);
     v.pi = u;
+  }
+}
+```
+
+### Algoritmo di Bellman-Ford
+
+```
+Bellman-Ford(G, w, s) {
+  Initialize-Single-Source(G, s);
+  for (i = 1 to G.V.length-1) {
+    for ((u,v) in G.E) {
+      Relax(u,v,w);
+    }
+  }
+  for ((u,v) in G.E) {
+    if (v.d > u.d + w(u,v)) {
+      return FALSE;
+    }
+  }
+  return TRUE;
+}
+```
+
+### Algoritmo di Dijkstra
+
+```
+Dijkstra(G, w, s) {
+  Initialize-Single-Source(G, s);
+  S = [];
+  Q = G.V;
+  while (Q.length > 0) {
+    u = extractMin(Q);
+    S.push(u);
+    for (v in Adj[u]) {
+      Relax(u,v,w);
+    }
   }
 }
 ```
