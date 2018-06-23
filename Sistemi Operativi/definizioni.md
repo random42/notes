@@ -18,3 +18,9 @@ Commit | Transazione conclusa con successo
 Abort | Transazione fallita
 Rollback | Tornare a uno stato precedente
 Deadlock | Stallo dovuto a un'attesa circolare di risorse
+TLB | Cache per la tabella delle pagine
+PTBR | Indirizzo della tabella delle pagine in RAM
+Lazy swapping | Pagina di un processo da caricare in RAM
+On demand paging | Una pagina viene caricata solo se richiesta
+Copiatura su scrittura | Dopo una fork i processi usano le stesse pagine, quando uno cerca di modificare dei dati avviene la copiatura
+Dirty bit | Assegnato a una pagina in RAM per indicare se e' stata modificata
