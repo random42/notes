@@ -15,7 +15,7 @@ Quando si richiede una pagina mancante avviene un'interruzione di **page fault**
 
 Si tiene un bit (**dirty bit**) per indicare se una pagina in RAM e' stata modificata dalla sua copia in memoria secondaria, cosi si evita di ricopiarla.
 
-## Allocazione frame
+## Allocazione frame dei processi utente
 
 Si cerca di avere un minimo di frame allocati per processo per diminuire i page fault.
 - proporzionale
@@ -47,3 +47,24 @@ Si usano segmenti di potenze di due. Risulta in un'alta frammentazione interna.
 **istanza**: istanza di un tipo di dato contenuto nella cache
 
 C'e' una cache per ogni struttura (semafori, PCB, file...). Ogni *istanza* di una cache puo' essere libera o occupata. Quando si richiede una nuova istanza non disponibile si cerca un nuovo slab e lo si assegna alla cache.
+
+
+## Algoritmi di sostituzione delle pagine
+
+### FIFO
+
+Si sostituisce la pagina in memoria da piu' tempo. Non e' efficiente perche' una pagina potrebbe essere in memoria da molto tempo e comunque usata frequentemente.
+
+### Algoritmo ottimale
+
+Si sostituisce la pagina che non verrà usata per il periodo di tempo più lungo. Non e' applicabile ovviamente.
+
+### Least-recently used
+
+A ogni pagina si associa un marcatore temporale che corrisponde all'**istante di ultimo utilizzo**. Si sceglie la pagina usata meno di recente.
+
+Serve un'architettura per mantenere il riferimento temporale a ogni accesso in memoria.
+
+### Approssimazione LRU con bit di riferimento
+
+Registro con bit a scorrimento. Il bit piu' significativo indica se la pagina e' stata utilizzata nell'ultimo periodo di tempo. Quindi la pagina usata meno recentemente negli ultimi *bit* periodi di tempo e' quella con valore minimo nel registro.

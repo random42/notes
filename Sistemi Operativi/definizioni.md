@@ -24,3 +24,4 @@ Lazy swapping | Pagina di un processo da caricare in RAM
 On demand paging | Una pagina viene caricata solo se richiesta
 Copiatura su scrittura | Dopo una fork i processi usano le stesse pagine, quando uno cerca di modificare dei dati avviene la copiatura
 Dirty bit | Assegnato a una pagina in RAM per indicare se e' stata modificata
+Anomalia di Belady | Picco di aumento di page fault aumentando i frame
