@@ -158,7 +158,7 @@ if (numlettori == 1)
 V(mutex);
 <legge>
 P(mutex);
-numlettori­­;
+numlettori--­­;
 if (numlettori == 0)
    V(scrittura);
 V(mutex);

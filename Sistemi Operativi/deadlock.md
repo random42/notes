@@ -1,4 +1,4 @@
-## Deadlock
+# Deadlock
 
 Condizioni necessarie:
 - Mutua esclusione
@@ -7,23 +7,23 @@ Condizioni necessarie:
 - Attesa circolare
 
 
-#### Grafo di assegnazione delle risorse
+### Grafo di assegnazione delle risorse
 
 ![grafo di assegnazione](https://i.imgur.com/yKlv0Lu.png)
 
 Se c'e' un ciclo e le risorse sono uniche c'e' deadlock.
 
 
-### Strategie di Havender
+## Strategie di Havender
 
-#### 1 - Possesso e attesa
+### 1 - Possesso e attesa
 Un processo richiede tutte le risorse insieme e attende se non sono tutte disponibili.
 
 **Contro**:
 - Spreco di risorse
 
 
-#### 2 - Prelazione
+### 2 - Prelazione
 
 Quando un processo richiede una risorsa che gli viene negata rilascia tutte le risorse in suo possesso.
 
@@ -32,14 +32,14 @@ Quando un processo richiede una risorsa che gli viene negata rilascia tutte le r
 - Non tutte le risorse sono preemptive (es. stampante)
 - Puo' creare starvation
 
-#### 3 - Attesa circolare
+### 3 - Attesa circolare
 
 A ogni risorsa e' associato un numero. I processi devono richiedere le risorse in ordine crescente cosi' da evitare attese circolari.
 
 **Contro**:
 - Poco flessibile (i programmatori devono sapere l'ordine)
 
-### Stato sicuro
+## Stato sicuro
 
 Stato per cui ogni processo termina in tempo finito
 

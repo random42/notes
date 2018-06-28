@@ -17,7 +17,7 @@
 #### Socket
 
 Comunicazione tra macchine diverse
-Si identifica con <IP>:<port>.
+Si identifica con IP:port.
 
 #### Pipe
 
