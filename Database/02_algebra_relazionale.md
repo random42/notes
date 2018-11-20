@@ -55,7 +55,33 @@ reparti ⋈_Primario=MATR_ medici
 
 **Natural-join** = Join di uguaglianza su insiemi comuni (chiavi esterne) oppure prodotto cartesiano se gli insiemi sono diversi
 
-**Semi-join** = ⋉Θ  Seleziona solo gli attributi della prima relazione
+⋉ **Semi-join** = Seleziona solo gli attributi della prima relazione
 
 r1(A) ⋉Θ r2(B) = ∏A( r1(A) ⋈Θ r2(B) )
+
+⟕ **Left join** = Si mantengono tutte le tuple della prima relazione. Se una tupla non fa join con la seconda relazione vengono inseriti valori null negli attributi della seconda tabella.
+
+⟖ **Right join** = Stessa cosa di left ma al contrario
+
+⟗ **Full-join** = Unione di left-join con right-join
+
+### Quantificazione
+
+#### Esistenziale
+*Esiste* un paziente ricoverato nel reparto x
+
+#### Universale
+
+"Tutti, ogni, sempre"
+
+Elencare le matricole abbinate a tutti i corsi di studio.
+
+- Individuare universo di riferimento
+- Prendere tutte le combinazioni possibili matricola corsi ∏MATR(e) x p
+- Trovo la differenza con lo schema originale
+- Il risultato sara' il complemento di cio' che devo trovare
+- Sottraggo il risultato all'universo di partenza ∏MATR(e) – ∏MATR((∏MATR(e) x p) - e)
+
+L'operazione fatta e' il **quoziente**.
+
 #### Quoziente
