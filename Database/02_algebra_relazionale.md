@@ -85,3 +85,5 @@ Elencare le matricole abbinate a tutti i corsi di studio.
 L'operazione fatta e' il **quoziente**.
 
 #### Quoziente
+
+r(A,B) ÷ s(B) = ∏A(r) – ∏A((∏A(r) x s) – r)
