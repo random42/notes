@@ -71,7 +71,7 @@ Non chiave | N | N
 Chiave | (N+1)/2 | (N+1)/2
 Non chiave | N | N
 
-### Accesso tabellare (INDICI)
+## Accesso tabellare (indici)
 
 Usa gli **indici**. Per mantenere gli indici si usano **B-alberi**. Nell'indice in una basi di dati, i nodi dell'albero sono pagine e i puntatori ai livelli inferiori sono PID.
 
@@ -120,4 +120,113 @@ CARD(T) | Numero di record in tabella
 N_page(T) | Numero di pagine della tabella
 
 
-### Stima dei costi
+## Stima dei costi
+
+`C_a = C_i + C_d`
+
+C_i = costo di accesso per arrivare alla foglia dell'indice
+
+`f_p * N_foglie(A,T)`
+
+C_d = costo di accesso alla pagina dati tramite RID
+
+`E_reg (numero accessi) = fp * CARD(T)`
+
+C_d = E_reg; Stima in eccesso perche' piu' RID possono essere nella stessa pagina
+
+Uso quindi la **formula di Cardenas**:
+
+`F(k, n) = n * (1 – (1 – 1/n)^k)`
+
+`F(k, n) ≤ min{k, n}`
+
+k = numero di read
+
+n = numero di pagine
+
+
+![Costi](https://i.imgur.com/i7u99Ex.png)
+
+## Accesso diretto
+
+Accesso con costo O(1)
+
+Bucket = pagina
+
+Si usa una funzione *h* di hashing per determinare il bucket e l'offset di un record tramite una chiave.
+
+La funzione *h* dev'essere suriettiva. Quando ci sono due chiavi uguale si usano le **liste di overflow**.
+
+Solitamente
+
+`h(k)= k mod m`
+
+Dove m e' un numero primo o prodotto di numeri primi.
+
+**Accesso procedurale statico**:
+
+Bisogna avere (m * c) < N spazi in tabella.
+
+**Accesso procedurale dinamico**:
+
+I bucket sono dinamici, possono aumentare o diminuire a seconda dello spazio necessario.
+
+### Indici hash
+
+Sono basati sulle tabelle hash di prima. Sono poco usati perche' ammettono soltanto la ricerca puntuale, non quella di range.
+
+## Ottimizzare le selezioni
+
+```
+STUDENTI(MATR*,Nome*,DataNascita*,Genere,Indirizzo)
+Nome='Piero' ^ DataNascita>'1990' ^ Indirizzo='TO'(T)
+```
+
+**Prima strategia**:
+
+Uso tutti gli indici possibili e calcolo l'intersezione degli insiemi di RID.
+
+**Seconda strategia**:
+
+Calcolo i costi di accesso e uso solo l'indice con costo minore, porto i risultati in memoria e calcolo gli altri predicati
+
+
+### Algoritmi di join
+
+#### Nested loop
+
+```
+per ogni pagina Ri di R
+  per ogni pagina Sh di S
+    Calcola il join di Ri ⋈Θ Sh
+```
+`Costo = Npage(R) + Npage(R) * Npage(S)`
+
+### Nested block join
+
+Anziché caricare una pagina di R e poi eseguire il loop interno, si caricano blocchi di B – 1 pagine di R, e per ogni blocco eseguo un loop completo su S
+
+Costo = Npage(R) + (Npage(R)/(B – 1)) * Npage(S)
+
+### Nested loop con indice
+
+```
+per ogni pagina Ri di R
+  per ogni tupla t  Ri
+    calcola S'= σB Θ t[A](S)
+    se |S'| > 0 allora
+      restituisce t  S'
+```
+
+`Costo = Npage(R) + CARD(R)(CI(S')+ CD(S'))`
+
+
+### Costo selezione
+
+`Cσ = C_i1+ C_d(MATR,STUDENTI)`
+
+C_i1 = 1 / CARD(STUDENTI) * N_foglie(i1)
+
+C_d = min{E_reg, N_page(STUDENTI)}
+
+E_reg = CARD(STUDENTI) * 1/CARD(STUDENTI) = 1
