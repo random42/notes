@@ -19,7 +19,7 @@ Il gestore del ripristino è basato su quattro approcci/algoritmi diversi.
 
 Ci sono quindi 4 modalita' di gestione di ripristino in base alle politiche di gestione del buffer.
 
-### Caso steal/no-flush
+### Caso 1: steal/no-flush
 
 Situazioni problematiche:
 
@@ -67,3 +67,63 @@ Nel ripristino le transazioni in abort vengono ignorate perche' il log di abort 
 Quando si scambiano due pagine bisogna eseguire:
 - FORCE LOG : per gestire i crash
 - FORCE pagina : trasferimento su disco della pagina rubata
+
+#### Checkpoint
+
+- Si sospendono tutte le transazioni
+- Si scrive un record di CHECKPOINT contenente l'elenco delle transazioni attive con il puntatore allo start
+- Si esegue FORCE LOG
+- Si esegue FORCE pagine delle transazioni in commit
+- Viene aggiunto un flag di OK nel record di checkpoint e si esegue un nuovo FORCE LOG
+
+![checkpoint](https://i.imgur.com/j2kru3m.png)
+
+### Caso 2 no-steal/no-flush
+
+Siamo in politica no flush: serve l'**AS** per il REDO delle transazioni che hanno raggiunto il commit.
+
+Siamo in politica no steal: **non** serve il **BS** perché tutte le azioni fatte dalle transazioni non committate hanno modificato solo le pagine nel buffer (in memoria centrale).
+
+Non si esegue UNDO.
+
+
+### Caso 3 steal/flush
+
+Non abbiamo bisogno dell'after-state perche' c'e' la politica flush.
+
+Non si esegue REDO.
+
+### Caso 4: no-steal/flush
+
+Teoricamente non serve il file di log.
+
+C'e' il problema del crash durante il trasferimento di una pagina.
+
+#### Tecnica con pagine ombra
+
+![pagine_ombra](https://i.imgur.com/1WUbAEY.png)
+
+La transazione prende una copia della tabella delle pagine, e cambia il puntatore al record X alla pagina di X'.
+
+Se va in commit la sua tabella viene sostituita a quella in memoria stabile (fase 1) e poi da li' viene sostituita alla tabella originale (master) (fase 2).
+
+Se va in rollback si rilascia il lock e non serve modificare nulla.
+
+In caso di crash se la caduta avviene prima della fase 1 la transazione fallisce, altrimenti al ripristino si completa la fase 2.
+
+
+### Tecnica dump/restore
+
+La base dati viene copiata (dump) periodicamente su memoria stabile (ad esempio nastri) e il log è vuoto.
+
+Le transazioni modificano lo stato della base dati e scrivono il file di log con relativi after state.
+
+In caso di guasto:
+
+- Copia del dump sulla nuova periferica (restore)
+- Si legge tutto il log e si effettua il REDO(LC)
+
+
+## Riassunto
+
+![Imgur](https://i.imgur.com/A95rHRI.png)
