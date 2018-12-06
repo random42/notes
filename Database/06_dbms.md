@@ -66,10 +66,10 @@ Non chiave | N | N
 
 **Costo di ricerca sequenziale**:
 
-* | Successo | Insuccesso
--|-|-
-Chiave | (N+1)/2 | (N+1)/2
-Non chiave | N | N
+|| Successo | Insuccesso|
+|-|-|-|
+|Chiave | (N+1)/2 | (N+1)/2|
+|Non chiave | N | N|
 
 ## Accesso tabellare (indici)
 
