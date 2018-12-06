@@ -59,14 +59,14 @@ I record della stessa tabella devono pero' essere linkati tra di loro nel caso c
 
 **Costo di ricerca seriale**:
 
-- | Successo | Insuccesso
+* | Successo | Insuccesso
 -|-|-
 Chiave | (N+1)/2 | N
 Non chiave | N | N
 
 **Costo di ricerca sequenziale**:
 
-- | Successo | Insuccesso
+* | Successo | Insuccesso
 -|-|-
 Chiave | (N+1)/2 | (N+1)/2
 Non chiave | N | N
