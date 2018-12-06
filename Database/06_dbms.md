@@ -122,6 +122,8 @@ N_page(T) | Numero di pagine della tabella
 
 ## Stima dei costi
 
+![fattore](https://i.imgur.com/f3YQTFd.png)
+
 `C_a = C_i + C_d`
 
 C_i = costo di accesso per arrivare alla foglia dell'indice
