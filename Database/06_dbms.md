@@ -77,6 +77,8 @@ Usa gli **indici**. Per mantenere gli indici si usano **B-alberi**. Nell'indice 
 
 I **B+ alberi** sono uguali ma mantengono tutte le chiavi nelle foglie.
 
+![B-tree](https://www.geeksforgeeks.org/wp-content/uploads/BTreeIntro1.png)
+
 #### Indice principale
 E' definito sulla chiave primaria. 0 o 1 in ogni relazione
 
