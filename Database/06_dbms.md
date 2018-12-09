@@ -118,35 +118,46 @@ Espressione | Significato
 -|-
 VAL(A,T) | Per ogni attributo A il numero dei valori distinti in una tabella T.
 N_foglie(A,T) | Numero di pagine che costituiscono le foglie di un indice (denso)
-CARD(T) | Numero di record in tabella
-N_page(T) | Numero di pagine della tabella
+CARD(T) | Numero di tuple nella tabella T
+N_page(T) | Numero di pagine della tabella T
 
 
 ## Stima dei costi
 
+Per costi si intende il numero di accessi alla memoria secondaria, poiche' molto piu' lenta della RAM.
+
+### Fattore di selettivita'
+
 ![fattore](https://i.imgur.com/f3YQTFd.png)
 
-`C_a = C_i + C_d`
+### Costo di selezione
+
+```
+Costo di accesso
+C_a = C_i + C_d
+
+f_p = fattore selettivita'
 
 C_i = costo di accesso per arrivare alla foglia dell'indice
 
-`f_p * N_foglie(A,T)`
+C_i = f_p * N_foglie(A,T)
 
 C_d = costo di accesso alla pagina dati tramite RID
 
-`E_reg (numero accessi) = fp * CARD(T)`
+E_reg = fp * CARD(T) // numero di tuple considerate dalla selezione
 
-C_d = E_reg; Stima in eccesso perche' piu' RID possono essere nella stessa pagina
+C_d = E_reg
 
-Uso quindi la **formula di Cardenas**:
+Stima in eccesso perche' piu' RID possono essere nella stessa pagina e inoltre
+potrei considerare piu' accessi di quante pagine abbia la tabella.
 
-`F(k, n) = n * (1 – (1 – 1/n)^k)`
+Infatti..
 
-`F(k, n) ≤ min{k, n}`
+Formula di Cardenas:
 
-k = numero di read
+C_d = F(E_reg, N_page(T)) = min{E_reg, N_page(T)}
 
-n = numero di pagine
+```
 
 
 ![Costi](https://i.imgur.com/i7u99Ex.png)
@@ -200,9 +211,9 @@ Calcolo i costi di accesso e uso solo l'indice con costo minore, porto i risulta
 #### Nested loop
 
 ```
-per ogni pagina Ri di R
-  per ogni pagina Sh di S
-    Calcola il join di Ri ⋈Θ Sh
+per ogni pagina R[i] di R
+  per ogni pagina S[h] di S
+    Calcola il join di R[i] ⋈Θ S[h]
 ```
 `Costo = Npage(R) + Npage(R) * Npage(S)`
 
