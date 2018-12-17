@@ -5,16 +5,40 @@
 - Paolo Peretti - Matricola 838975
 
 ## Indice
-1. [Requisiti iniziali](##Requisiti iniziali)
-2. [Glossario dei termini](##Glossario dei termini)
-3. [Requisiti strutturati in gruppi di frasi omogenee](##Requisiti strutturati in gruppi di frasi omogenee)
-4. [Schema ER e regole aziendali](##Schema ER e regole aziendali)
-5. [Tavola dei volumi](##Tavola dei volumi)
-6. [Tavola delle operazioni](##Tavola delle operazioni)
-7. [Analisi delle ridondanze](##Analisi delle ridondanze)
-8. [Schema relazionale](##Schema relazionale)
-9. [DDL](##DDL)
-10. [DML](##DML)
+* [Basi di Dati 17/18: Esercizio di progettazione](#basi-di-dati-1718-esercizio-di-progettazione)
+   * [Indice](#indice)
+* [Progettazione concettuale](#progettazione-concettuale)
+   * [Requisiti iniziali](#requisiti-iniziali)
+   * [Glossario dei termini](#glossario-dei-termini)
+   * [Requisiti strutturati in gruppi di frasi omogenee](#requisiti-strutturati-in-gruppi-di-frasi-omogenee)
+         * [Utenti](#utenti)
+         * [Libri](#libri)
+         * [Categorie](#categorie)
+         * [Capitoli](#capitoli)
+         * [Paragrafi](#paragrafi)
+   * [Schema ER e regole aziendali](#schema-er-e-regole-aziendali)
+      * [Regole aziendali](#regole-aziendali)
+         * [Vincoli d'integrita'](#vincoli-dintegrita)
+         * [Concetti](#concetti)
+* [Progettazione logica](#progettazione-logica)
+   * [Tavola dei volumi](#tavola-dei-volumi)
+   * [Tavola delle operazioni](#tavola-delle-operazioni)
+   * [Analisi delle ridondanze](#analisi-delle-ridondanze)
+      * [Ridondanze presenti](#ridondanze-presenti)
+      * [Numero di seguiti e seguaci](#numero-di-seguiti-e-seguaci)
+         * [Seguire un utente](#seguire-un-utente)
+         * [Smettere di seguire un utente](#smettere-di-seguire-un-utente)
+         * [Visualizzare il profilo di un utente](#visualizzare-il-profilo-di-un-utente)
+         * [Costo totale](#costo-totale)
+      * [Numero voti e numero letture](#numero-voti-e-numero-letture)
+         * [Leggere un libro](#leggere-un-libro)
+         * [Visualizzare un libro](#visualizzare-un-libro)
+         * [Costo totale](#costo-totale-1)
+      * [Conclusione](#conclusione)
+   * [Schema relazionale](#schema-relazionale)
+* [Implementazione](#implementazione)
+   * [DDL](#ddl)
+   * [DML](#dml)
 
 
 # Progettazione concettuale
@@ -78,7 +102,7 @@ I paragrafi sono identificati dal capitolo di appartenenza e dal numero del para
 
 ## Schema ER e regole aziendali
 
-![ER](https://i.imgur.com/26ORZem.png)
+![ER](https://i.imgur.com/ayanpdg.png)
 
 ### Regole aziendali
 
@@ -95,6 +119,8 @@ I paragrafi sono identificati dal capitolo di appartenenza e dal numero del para
 1. Due libri sono considerati correlati se hanno almeno 3 tag in comune e sono stati votati entrambi da almeno 10 utenti.
 
 2. Uno scrittore e' associato a una categoria narrativa se ha scritto almeno 2 libri appartenenti a quella categoria.
+
+# Progettazione logica
 
 ## Tavola dei volumi
 
@@ -290,7 +316,9 @@ Manteniamo tutte le ridondanze visti i costi di accesso minori.
 
 ## Schema relazionale
 
-![schema_relazionale](https://i.imgur.com/lmQn8d6.png)
+![schema_relazionale](https://i.imgur.com/eRDmOAU.png)
+
+# Implementazione
 
 ## DDL
 
@@ -319,6 +347,36 @@ CREATE TABLE libro (
   FOREIGN KEY (autore) REFERENCES utente (username)
 );
 
+CREATE TABLE categoria (
+  nome VARCHAR(100) PRIMARY KEY,
+  descrizione VARCHAR(1000)
+);
+
+CREATE TABLE capitolo (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  libro VARCHAR(100) NOT NULL,
+  num INT UNSIGNED NOT NULL,
+  nome VARCHAR(100) NOT NULL,
+  FOREIGN KEY (libro) REFERENCES libro (titolo)
+);
+
+CREATE TABLE paragrafo (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  capitolo INT UNSIGNED NOT NULL,
+  num INT UNSIGNED NOT NULL,
+  testo NVARCHAR(max) NOT NULL,
+  FOREIGN KEY (capitolo) REFERENCES capitolo (id)
+);
+
+CREATE TABLE commento (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  capitolo INT UNSIGNED NOT NULL,
+  utente VARCHAR(100) NOT NULL,
+  data TIMESTAMP NOT NULL,
+  testo VARCHAR(max) NOT NULL,
+  FOREIGN KEY (capitolo) REFERENCES capitolo (id)
+);
+
 CREATE TABLE lettura (
   utente VARCHAR(100),
   libro VARCHAR(100),
@@ -344,18 +402,13 @@ CREATE TABLE seguace (
   PRIMARY KEY (seguace, seguito)
 );
 
-CREATE TABLE tag_libro (
-  tag VARCHAR(100),
-  utente VARCHAR(100),
+CREATE TABLE tag (
+  nome VARCHAR(100),
+  utente VARCHAR(100) NOT NULL,
   libro VARCHAR(100),
   FOREIGN KEY (utente) REFERENCES utente (username),
   FOREIGN KEY (libro) REFERENCES libro (titolo),
-  PRIMARY KEY (tag, libro)
-);
-
-CREATE TABLE categoria (
-  nome VARCHAR(100) PRIMARY KEY,
-  descrizione VARCHAR(1000)
+  PRIMARY KEY (nome, libro)
 );
 
 CREATE TABLE libro_categoria (
@@ -364,38 +417,6 @@ CREATE TABLE libro_categoria (
   FOREIGN KEY (libro) REFERENCES libro (titolo),
   FOREIGN KEY (categoria) REFERENCES categoria (nome),
   PRIMARY KEY (categoria, libro)
-);
-
-CREATE TABLE capitolo (
-  libro VARCHAR(100),
-  num_capitolo INT UNSIGNED,
-  nome VARCHAR(100),
-  FOREIGN KEY (libro) REFERENCES libro (titolo),
-  PRIMARY KEY (libro, num)
-);
-
-CREATE TABLE paragrafo (
-  libro VARCHAR(100),
-  num_capitolo INT UNSIGNED,
-  num_paragrafo INT UNSIGNED,
-  testo NVARCHAR(max),
-  FOREIGN KEY (libro) REFERENCES libro (titolo),
-  FOREIGN KEY (libro, num_capitolo) REFERENCES capitolo (libro, num_capitolo),
-  PRIMARY KEY (libro, num_capitolo, num_paragrafo)
-);
-
-CREATE TABLE commento (
-  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-  libro VARCHAR(100),
-  num_capitolo INT UNSIGNED,
-  num_paragrafo INT UNSIGNED,
-  utente VARCHAR(100) NOT NULL,
-  data TIMESTAMP,
-  testo NVARCHAR(max),
-  FOREIGN KEY (libro) REFERENCES libro (titolo),
-  FOREIGN KEY (libro, num_capitolo) REFERENCES capitolo (libro, num_capitolo),
-  FOREIGN KEY (libro, num_capitolo, num_paragrafo) REFERENCES paragrafo (libro, num_capitolo, num_paragrafo),
-  FOREIGN KEY (utente) REFERENCES utente (username)
 );
 
 ```
