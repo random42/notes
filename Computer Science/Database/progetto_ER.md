@@ -5,8 +5,6 @@
 - Paolo Peretti - Matricola 838975
 
 ## Indice
-* [Basi di Dati 17/18: Esercizio di progettazione](#basi-di-dati-1718-esercizio-di-progettazione)
-   * [Indice](#indice)
 * [Progettazione concettuale](#progettazione-concettuale)
    * [Requisiti iniziali](#requisiti-iniziali)
    * [Glossario dei termini](#glossario-dei-termini)
@@ -63,16 +61,16 @@ Due libri sono considerati correlati se hanno almeno 3 tag in comune e sono stat
 
 ## Glossario dei termini
 
-Termine | Descrizione | Sinonimi | Collegamenti
-- | - | - | -
-Utente | Persona registrata | Iscritto, scrittore, lettore | Libro, Utente
-Libro | Testo scritto da utenti | Testo | Utente, Categoria, Capitolo
-Categoria | Insieme di generi | Genere narrativo | Libro, Utente
-Capitolo | Sezione di un libro | | Libro, Paragrafo, Sommario
-Paragrafo | Sezione di un capitolo | | Capitolo, Utente
-Tag | Etichetta associata ad un libro | | Utente, Libro
-Commento | Opinione di un utente rispetto a un paragrafo | Opinione | Utente, Paragrafo
-Voto | Apprezzamento di un libro da parte di un utente | Apprezzamento | Utente, Libro
+| Termine | Descrizione | Sinonimi | Collegamenti
+| - | - | - | -
+| Utente | Persona registrata | Iscritto, scrittore, lettore | Libro, Utente
+| Libro | Testo scritto da utenti | Testo | Utente, Categoria, Capitolo
+| Categoria | Insieme di generi | Genere narrativo | Libro, Utente
+| Capitolo | Sezione di un libro | | Libro, Paragrafo, Sommario
+| Paragrafo | Sezione di un capitolo | | Capitolo, Utente
+| Tag | Etichetta associata ad un libro | | Utente, Libro
+| Commento | Opinione di un utente rispetto a un paragrafo | Opinione | Utente, Paragrafo
+| Voto | Apprezzamento di un libro da parte di un utente | Apprezzamento | Utente, Libro
 
 ## Requisiti strutturati in gruppi di frasi omogenee
 
