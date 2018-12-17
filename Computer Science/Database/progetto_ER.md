@@ -98,22 +98,22 @@ I paragrafi sono identificati dal capitolo di appartenenza e dal numero del para
 
 ## Tavola dei volumi
 
-Concetto | Tipo | Volume
-- | - | -
-Utente | E | 40k
-Scrittura | R | 5k * 20
-Libro | E | 100k
-Categoria | E | 40
-Associazione | R | 100k * 5
-Tag | R | 100k * 20
-Lettura | R | 40k * 50
-Commento | R | 40k * 50
-Capitolo | E | 100k * 20
-Suddivisione | R | 100k * 20
-Paragrafo | E | 100k \* 20 \* 50
-Composizione | R | 100k \* 20 \* 50
-Voto | R | (40k * 20) / 10
-Seguace | R | 40k * 50
+| Concetto | Tipo | Volume
+| - | - | -
+| Utente | E | 40k
+| Scrittura | R | 5k * 20
+| Libro | E | 100k
+| Categoria | E | 40
+| Associazione | R | 100k * 5
+| Tag | R | 100k * 20
+| Lettura | R | 40k * 50
+| Commento | R | 40k * 50
+| Capitolo | E | 100k * 20
+| Suddivisione | R | 100k * 20
+| Paragrafo | E | 100k \* 20 \* 50
+| Composizione | R | 100k \* 20 \* 50
+| Voto | R | (40k * 20) / 10
+| Seguace | R | 40k * 50
 
 
 ## Tavola delle operazioni
