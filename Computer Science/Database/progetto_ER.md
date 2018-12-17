@@ -130,20 +130,20 @@ Media giornaliera:
 | Leggere un libro | I | 4k
 | Votare un libro | I | 100
 | Cercare un libro | I | 10k
-Commentare un paragrafo | I | 2k
-Rimuovere un libro | I | 0.05
-Inserire un utente | I | 50
-Rimuovere un utente | I | 1
-Seguire un utente | I | 10k
-Smettere di seguire un utente | I | 1k
-Aggiornare un libro | I | 1k
-Visualizzare un profilo utente | I | 15k
-Inserire un tag | I | 140
-Associare una categoria a un libro | I | 35
-Visualizzare i commenti di un libro | I | 10k
-Associare i libri nelle categorie speciali | B | 2
-Visualizzare i libri attualmente in lettura | I | 5k
-Visualizzare un libro | I | 20k
+| Commentare un paragrafo | I | 2k
+| Rimuovere un libro | I | 0.05
+| Inserire un utente | I | 50
+| Rimuovere un utente | I | 1
+| Seguire un utente | I | 10k
+| Smettere di seguire un utente | I | 1k
+| Aggiornare un libro | I | 1k
+| Visualizzare un profilo utente | I | 15k
+| Inserire un tag | I | 140
+| Associare una categoria a un libro | I | 35
+| Visualizzare i commenti di un libro | I | 10k
+| Associare i libri nelle categorie speciali | B | 2
+| Visualizzare i libri attualmente in lettura | I | 5k
+| Visualizzare un libro | I | 20k
 
 ## Analisi delle ridondanze
 
@@ -163,7 +163,7 @@ Frequenza = 10k
 *CON* ridondanza:
 
 Concetto | Costrutto | Accessi | Tipo
-- | - | - | -
+| - | - | - | -
 Seguace | R | 1 | S
 Utente | E | 2 | S
 
@@ -172,7 +172,7 @@ Costo: `10k * (3 * 2) = 60k`
 *SENZA* ridondanza:
 
 Concetto | Costrutto | Accessi | Tipo
-- | - | - | -
+| - | - | - | -
 Seguace | R | 1 | S
 
 Costo: `10k * (1 * 2) = 20k`
@@ -184,7 +184,7 @@ Frequenza = 1k
 *CON* ridondanza:
 
 Concetto | Costrutto | Accessi | Tipo
-- | - | - | -
+| - | - | - | -
 Seguace | R | 1 | S
 Utente | E | 2 | S
 
@@ -193,7 +193,7 @@ Costo: `1k * (3 * 2) = 6k`
 *SENZA* ridondanza:
 
 Concetto | Costrutto | Accessi | Tipo
-- | - | - | -
+| - | - | - | -
 Seguace | R | 1 | S
 
 Costo: `1k * (1 * 2) = 2k`
@@ -205,7 +205,7 @@ Frequenza = 15k
 *CON* ridondanza:
 
 Concetto | Costrutto | Accessi | Tipo
-- | - | - | -
+| - | - | - | -
 Utente | E | 1 | L
 
 Costo: `15k * 1 = 15k`
@@ -213,7 +213,7 @@ Costo: `15k * 1 = 15k`
 *SENZA* ridondanza:
 
 Concetto | Costrutto | Accessi | Tipo
-- | - | - | -
+| - | - | - | -
 Utente | E | 1 | L
 Seguace | R | 50 * 2 | L
 
@@ -240,7 +240,7 @@ Frequenza = 4k
 *CON* ridondanza:
 
 Concetto | Costrutto | Accessi | Tipo
-- | - | - | -
+| - | - | - | -
 Libro | E | 1 | S
 Lettura | R | 1 | S
 
@@ -249,7 +249,7 @@ Costo: `4k * (2 * 2) = 16k`
 *SENZA* ridondanza:
 
 Concetto | Costrutto | Accessi | Tipo
-- | - | - | -
+| - | - | - | -
 Lettura | R | 1 | S
 
 Costo: `4k * 2 = 8k`
@@ -261,7 +261,7 @@ Frequenza = 20k
 *CON* ridondanza:
 
 Concetto | Costrutto | Accessi | Tipo
-- | - | - | -
+| - | - | - | -
 Libro | E | 1 | L
 
 Costo: `20k * 1 = 20k`
@@ -269,7 +269,7 @@ Costo: `20k * 1 = 20k`
 *SENZA* ridondanza:
 
 Concetto | Costrutto | Accessi | Tipo
-- | - | - | -
+| - | - | - | -
 Libro | E | 1 | L
 Lettura | R | 10 | L
 
