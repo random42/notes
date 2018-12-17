@@ -124,12 +124,12 @@ Media giornaliera:
 - Letture completate: 1k
 - Scritture completate: 200
 
-Operazione | Tipo | Frequenza Giornaliera
-- | - | -
-Inserire un libro | I | 150
-Leggere un libro | I | 4k
-Votare un libro | I | 100
-Cercare un libro | I | 10k
+| Operazione | Tipo | Frequenza Giornaliera
+| - | - | -
+| Inserire un libro | I | 150
+| Leggere un libro | I | 4k
+| Votare un libro | I | 100
+| Cercare un libro | I | 10k
 Commentare un paragrafo | I | 2k
 Rimuovere un libro | I | 0.05
 Inserire un utente | I | 50
