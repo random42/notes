@@ -418,59 +418,91 @@ CREATE TABLE libro_categoria (
 ## DML
 
 ```sql
-INSERT INTO utente (username,nome,cognome,bio,data_iscrizione,foto_profilo,email,password,num_seguaci,num_seguiti) VALUES (
-  'asd','Roberto','Sero','Ciao a tutti, belli e brutti','2016-06-22 19:10:25-07','foto','roberto.sero@edu.unito.it','ciaociao1234',2,1
+INSERT INTO utente
+(username,nome,cognome,bio,data_iscrizione,
+foto_profilo,email,password,num_seguaci,num_seguiti)
+VALUES (
+  'asd','Roberto','Sero','Ciao a tutti, belli e brutti',
+  '2016-06-22 19:10:25-07','foto',
+  'roberto.sero@edu.unito.it','ciaociao1234',2,1
 ),
 (
-  'pippo','Matteo','Teso','fotografo e photo-coach, certificato Adobe ACE','2015-08-13','foto','pippoTeso@gmail.com','PaSsWoRd',1,2
+  'pippo','Matteo','Teso',
+  'fotografo e photo-coach, certificato Adobe ACE',
+  '2015-08-13',
+  'foto','pippoTeso@gmail.com','PaSsWoRd',1,2
 ),
 (
-  'pluto','Filippo','Punto','Cambio spesso idea!! anzi no','2017-02-20','foto','plutopunto@gmail.com','1234CInque!',2,1
+  'pluto','Filippo','Punto',
+  'Cambio spesso idea!! anzi no','2017-02-20',
+  'foto','plutopunto@gmail.com','1234CInque!',2,1
 ),
 (
-  'paulpaul','Paolo','Peretti','Mago Berlino e strega Francoforte','2013-07-7','foto','paolo.peretti@edu.unito.it','QWERTY!fgtyu6',0,1
+  'paulpaul','Paolo','Peretti',
+  'Mago Berlino e strega Francoforte','2013-07-7',
+  'foto','paolo.peretti@edu.unito.it','QWERTY!fgtyu6',0,1
 ),
 (
-  'noone','Bartolomeo','Lazo','Saremo noi i nostri eroi','2015-01-26','foto','bartolazoo@icloud.com','PASSword',0,0
+  'noone','Bartolomeo','Lazo',
+  'Saremo noi i nostri eroi','2015-01-26',
+  'foto','bartolazoo@icloud.com','PASSword',0,0
 );
 
 
 
-INSERT INTO libro (titolo,copertina,descrizione,autore,data_aggiornamento,num_voti,num_letture) VALUES (
-  'Zodiac Signs','img','Curiosità sui segni zodiacali','asd','2016-06-16',0,0
+INSERT INTO libro
+(titolo,copertina,descrizione,autore,
+data_aggiornamento,num_voti,num_letture) VALUES (
+  'Zodiac Signs','img',
+  'Curiosità sui segni zodiacali',
+  'asd','2016-06-16',0,0
 ),
 (
-  'Misteri','img','Studio su misteri legati alla mitologia ','pluto','2016-06-16',0,0
+  'Misteri','img',
+  'Studio su misteri legati alla mitologia ',
+  'pluto','2016-06-16',0,0
 ),
 (
-  'Punta in alto','img','Autobiografia','pippo','2015-02-14',2,1
+  'Punta in alto','img',
+  'Autobiografia','pippo',
+  '2015-02-14',2,1
 ),
 (
-  'Oltre il monte','img','Storie di alpinismo','noone','2017-03-29',1,1
+  'Oltre il monte','img',
+  'Storie di alpinismo','noone',
+  '2017-03-29',1,1
 ),
 (
-  'Aliens','img','Gli alieni invadono la Terra ','noone','2017-11-17',2,3
+  'Aliens','img',
+  'Gli alieni invadono la Terra',
+  'noone','2017-11-17',2,3
 ),
 (
-  'Big','img','Storia del colpo del secolo','paulpaul','2014-10-18',0,0
+  'Big','img',
+  'Storia del colpo del secolo',
+  'paulpaul','2014-10-18',0,0
 );
 
 
 
 INSERT INTO categoria (nome,descrizione) VALUES (
-  'Fantasy','Genere che tratta di soprannaturale'
+  'Fantasy',
+  'Genere che tratta di soprannaturale'
 ),
 (
-  'Horror','Suscita sentimenti di spavento ed orrore'
+  'Horror',
+  'Suscita sentimenti di spavento ed orrore'
 ),
 (
-  'Giallo','il crimine e le indagini per scoprirne il colpevole'
+  'Giallo',
+  'Il crimine e le indagini'
 ),
 (
-  'Storico','che riporta fatti storici'
+  'Storico','Riporta fatti storici'
 ),
 (
-  'Western','narra la vita di cowboy nomadi o pistoleri'
+  'Western',
+  'La vita di cowboy nomadi o pistoleri'
 );
 
 
@@ -507,7 +539,8 @@ INSERT INTO commento (id,paragrafo,utente,data,testo) VALUES (
   0,1,'asd','2016-06-23','Che colpo di scena!'
 ),
 (
-  1,2,'paulpaul','2011-12-13','Questo libro mi colpisce sempre di più'
+  1,2,'paulpaul','2011-12-13',
+  'Questo libro mi colpisce sempre di più'
 ),
 (
   2,3,'noone','2016-10-1','Manca di trama'
