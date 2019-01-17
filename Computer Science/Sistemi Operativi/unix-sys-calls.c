@@ -169,7 +169,7 @@ void messages() {
 
   #include <sys/msg.h>
 
-  int msgsnd( int msqid, const void *msgp, size_t msgsz (mtext.length), int msgflg);
+  int msgsnd(int msqid, const void *msgp, size_t msgsz, int msgflg);
   /* msgflg = IPC_NOWAIT per non bloccare se la coda e' piena e non invia il messaggio
 
   msgp =
@@ -177,6 +177,7 @@ void messages() {
     long mtype; Message type
     char mtext[]; Message body
   }
+  msgsz = struct size minus mtype
   */
 
   size_t msgrcv(int msqid, void *msgp, size_t maxmsgsz, long msgtyp, int msgflg);
