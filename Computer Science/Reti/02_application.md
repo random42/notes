@@ -103,3 +103,19 @@ Se cancelli i messaggi non puoi piu' rileggerli da altri client. E' stateless.
 Mantiene tutto sul server. Puoi organizzare i messaggi in cartelle. Mantiene lo stato delle cartelle.
 
 ## Domain Name System
+
+Database distribuito per mappare i nomi agli IP implementato tramite tanti *name servers*.
+
+C'e' una gerarchia in base al dominio. I root servers tengono gli IP dei Top Level Domain servers e cosi' via.
+
+Il mapping name-IP viene salvato nelle cache dei local DNS cosi da non over caricare i root servers.
+
+Records format:
+
+![dns-records](https://i.imgur.com/mC0GqIR.png)
+
+## P2P
+
+I trackers mantengono la lista di peers che tengono un certo file (torrent). I peers downloadano e uploadano pezzi del file.
+
+Tit-for-tat: Mandi i chunks a chi te ne manda di piu'. Ogni tanto mandi a qualcuno a caso per non avere un gruppo di monopolio e far girare i chunks.
