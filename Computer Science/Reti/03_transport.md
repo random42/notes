@@ -64,3 +64,36 @@ Puoi avere N pacchetti inviati non ack. C'e' un timer che parte dal primo pacche
 #### Selective repeat
 
 Stessa roba ma il timer e la risposta di ack e' per ogni pacchetto.
+
+## TCP
+
+Il flusso di messaggi e' controllato per non congestionare il receiver.
+
+![tcp](https://i.imgur.com/1vGuWaB.png)
+
+*Sequence number*:
+
+Per ogni segmento il sequence number e' la sommatoria delle lunghezze dei dati (quindi esclusi i campi del protocollo) trasmessi in tutti i messaggi precedenti. Per cui il receiver sa il Seq # del prossimo messaggio e se e' troppo grande capisce che sono stati persi dei messaggi nel mezzo.
+
+*Acknowledgement number*:
+
+E' il sequence number del messaggio di cui si vuole confermare la ricezione.
+
+![tcp_messages](https://i.imgur.com/t2cBmFP.png)
+
+### Retransmission timeout
+
+Per stabilire un tempo di timeout di ack si prendono vari sample di RTT, si fa la media e si usa la formula:
+
+`EstimatedRTT = (1 - α) * EstimatedRTT + α * SampleRTT`
+
+Dove α e' solitamente 0.125.
+Il timeout dovra' avere un margine di sicurezza per cui a EstimatedRTT si aggiunge la deviazione del sample.
+
+`DevRTT = (1 - β) * DevRTT + β * |SampleRTT - EstimatedRTT| (typically, β = 0.25)`
+
+`TimeoutInterval = EstimatedRTT + 4 * DevRTT`
+
+![tcp_sender](https://i.imgur.com/Ct82QtB.png)
+
+![tcp_receiver](https://i.imgur.com/9CsBYcm.png)
