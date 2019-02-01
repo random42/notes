@@ -3,7 +3,7 @@
 
 #### Memoria condivisa
 
-- serve un lock per accedere a dati consistenti
+Serve un lock per accedere a dati consistenti
 
 
 #### Messaggi

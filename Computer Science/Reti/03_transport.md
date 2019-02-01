@@ -41,7 +41,7 @@ Nei messaggi UDP c'e' un checksum (tipo somma di tutto il messaggio) per control
 
 ![udp](https://i.imgur.com/X7zng0w.png)
 
-## RDT (Reliable data transfer)
+## Reliable data transfer
 
 Super importante!!1!!
 
@@ -97,3 +97,104 @@ Il timeout dovra' avere un margine di sicurezza per cui a EstimatedRTT si aggiun
 ![tcp_sender](https://i.imgur.com/Ct82QtB.png)
 
 ![tcp_receiver](https://i.imgur.com/9CsBYcm.png)
+
+### Flow control
+
+Il receiver quando ack scrive quanti byte puo' accettare. Il sender quindi manda massimo quei byte fino al prossimo ack.
+
+### Connection
+
+#### 2-way handshake
+
+```
+A: Ci sei?
+B: Si
+```
+
+Fallisce se
+```
+A: Ci sei?
+A sparisce
+B: Si
+```
+
+![2-way-handshake](https://i.imgur.com/OE9lMWB.png)
+
+### 3-way handshake
+
+```
+A: Ci sei?
+B: Si
+A: Bella
+```
+
+## Congestion control
+
+Troppi dati per il network (quindi routers) da gestire.
+
+1. La linea ha velocita' finita, se mandi troppa roba al secondo avrai un ritardo altissimo di arrivo dei pacchetti superata quella velocita'.
+2. I router hanno buffer finiti, se superi quella capacita' perdi i pacchetti.
+3. Se i messaggi ci mettono tanto ad arrivare per i motivi sopra, il timeout ti farebbe reinviarli e peggioreresti le cose.
+
+Due modi per risolvere:
+
+### End-end
+
+La congestione e' rilevata dal receiver vedendo quanti pacchetti sono stati persi e il delay. E' l'approccio di TCP.
+
+### Network-assisted
+
+La congestione e' rilevata dai routers. Essi dicono al sender se c'e' congestione e a quale rate inviare i pacchetti.
+
+## TCP congestion control
+
+*cwnd* = congestion window, limite di velocita' di invio pacchetti
+
+*ssthresh* = slow start threshold, quando cwnd la supera si utilizza AIMD
+
+*MSS* = maximum segment size
+
+`rate = cwnd / RTT (bytes/sec)`
+
+#### Fase slow start
+
+*cwnd* aumenta esponenzialmente fino al primo packet loss. In pratica a ogni ACK si aumenta di MSS cwnd quindi ogni RTT cwnd = cwnd * 2 e quindi e' esponenziale.
+
+#### Fase AIMD
+
+Crescita additiva ogni RTT (1 MSS) e riduzione moltiplicativa (1/2).
+
+### Algoritmo TAHOE
+
+```
+cwnd = MSS;
+ssthresh = big_number;
+use slow-start;
+when (loss) {
+  ssthresh = cwnd / 2;
+  cwnd = MSS;
+  use slow-start;
+}
+```
+
+### Algoritmo RENO
+
+Uso loss.timeout e loss.3ack come boolean per indicare se la ragione del packet loss e' quella.
+
+```
+cwnd = MSS;
+ssthresh = big_number;
+use slow-start;
+when (loss) {
+  if (loss.timeout) {
+    ssthresh = cwnd / 2;
+    cwnd = MSS;
+    use slow-start;
+  }
+  else if (loss.3ack) {
+    ssthresh = cwnd/2;
+    cwnd = ssthresh + (3 * MSS);
+    use AIMD;
+  }
+}
+```
