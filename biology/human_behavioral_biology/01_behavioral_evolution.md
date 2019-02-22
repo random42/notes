@@ -67,7 +67,7 @@ Un tipo ha programmato varie strategie da usare in questo gioco e le ha fatte sc
 
 ### Strategia ottimale
 
-**Tit for tat** (pan per focaccia)
+**Tit for tat** (pan per focaccia, occhio per occhio dente per dente)
 
 Inizi cooperando e cooperi finche' l'altro lo fa. Quando l'altro cheatta cheatti anche tu il turno dopo e torni a cooperare quando coopera l'altro.
 
@@ -78,3 +78,44 @@ Quindi in questi casi e' meglio **Forgiving tit for tat**. Ovvero ti perdona la 
 **Tft -> fTfT**: Inizi con tit for tat, se si coopera abbastanza volte ti **fidi** e usi forgiving tft. Quindi il parametro da decidere e' quando cominciare a fidarti.
 
 **Pavlov**: Provi una scelta, se ci guadagni la rifai altrimenti cambi. Puo' essere simile al tft, solo che riesce a sfruttare quelli perdonano.
+
+Nel mondo reale non c'e' un solo game tra due animali ma ci sono diversi game con vari individui. Per cui capita che se qualcuno non partecipa in una certa task e sembra approfittarsi degli altri in realta' si scopre che ha un ruolo piu' rischioso in qualche altra task.
+
+## Differenze in due tipi di specie animali
+
+### Maschi molto piu' grandi delle femmine (tournament species)
+
+- Aggressione nei maschi
+- 95% della riproduzione in 5% dei maschi
+
+Le femmine selezionano il maschio piu' forte e aggressivo e si scopano tutte quello.
+
+- I maschi muoiono prima perche' hanno un corpo piu' dispendioso
+- 1% di figli gemelli (e poi spesso ne muore uno)
+- I maschi scopano qualunque femmina
+
+### Maschi stessa taglia delle femmine (pair-bonding/monogamous species)
+
+- Ogni maschio ha circa 1 o 2 figli
+- Le femmine cercano un maschio che si curi di loro e della prole.
+
+Infatti per rimorchiare i maschi portano il cibo alle femmine.
+
+- I maschi scelgono la femmina (e il contrario ovviamente)
+- Vivono uguale
+- Alta percentuale di figli gemelli perche' ci sono due genitori
+- Le femmine spesso dopo aver fatto i figli tradiscono perche' tanto c'e' il padre che bada a loro
+
+### Umani
+
+Gli umani sono a meta' tra questi due tipi. La maggior parte delle culture odierne richiede relazioni monogame ma in queste relazioni e' pieno di gente che tradisce. Nel passato ci sono state tante culture in cui la poligamia era diffusa ma la maggior parte delle relazioni erano monogame.
+
+I due tipi di poligamia piu' diffusi nell'antichita' erano la poligamia economica in cui il maschio piu' ricco ha piu' mogli e la poligamia demografica in cui i maschi sono guerrieri o cacciatori e ne muoiono un botto, quindi scopano piu' donne.
+
+## Omicidi nella stessa specie
+
+I cuccioli hanno il bel faccino per non farsi uccidere e esser presi in cura.
+
+Ciononostante ci sono specie in cui i maschi uccidono i figli degli altri maschi perche' come detto prima l'obiettivo e la riproduzione e questo e' un modo per ridurre la competizione.
+
+Questo succede nelle tournament species in cui il tempo in cui un maschio rimane alfa e' minore del tempo in cui che ci mettono le femmine a crescere i cuccioli ed essere di nuovo fertili. Perche' se diventi maschio alfa e ci resti per un anno ma tutte le femmine hanno i figli del precedente alfa e devono ancora aspettare 2 anni per crescere i figli non hai molte chance. Quindi uccidi i cuccioli, le femmine tornano fertili e ti riproduci.
