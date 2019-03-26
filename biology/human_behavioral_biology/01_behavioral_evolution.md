@@ -112,10 +112,26 @@ Gli umani sono a meta' tra questi due tipi. La maggior parte delle culture odier
 
 I due tipi di poligamia piu' diffusi nell'antichita' erano la poligamia economica in cui il maschio piu' ricco ha piu' mogli e la poligamia demografica in cui i maschi sono guerrieri o cacciatori e ne muoiono un botto, quindi scopano piu' donne.
 
-## Omicidi nella stessa specie
+## Comportamenti con i cuccioli nelle tournament species
+
+`Le seguenti cose sono state principalmente osservate nei primati (scimmie). Non so quali altri animali presentano gli stessi comportamenti.`
 
 I cuccioli hanno il bel faccino per non farsi uccidere e esser presi in cura.
 
-Ciononostante ci sono specie in cui i maschi uccidono i figli degli altri maschi perche' come detto prima l'obiettivo e la riproduzione e questo e' un modo per ridurre la competizione.
+Ciononostante ci sono specie in cui i maschi uccidono i figli degli altri maschi perche' come detto prima l'obiettivo e' la propria riproduzione e questo e' un modo per ridurre la competizione.
 
-Questo succede nelle tournament species in cui il tempo in cui un maschio rimane alfa e' minore del tempo in cui che ci mettono le femmine a crescere i cuccioli ed essere di nuovo fertili. Perche' se diventi maschio alfa e ci resti per un anno ma tutte le femmine hanno i figli del precedente alfa e devono ancora aspettare 2 anni per crescere i figli non hai molte chance. Quindi uccidi i cuccioli, le femmine tornano fertili e ti riproduci.
+Questo succede nelle tournament species in cui il tempo in cui un maschio rimane alfa e' minore del tempo che ci mettono le femmine a crescere i cuccioli ed essere di nuovo fertili. Perche' se diventi maschio alfa e ci resti per un anno ma tutte le femmine hanno i figli del precedente alfa e devono ancora aspettare 2 anni per crescere i figli non hai molte chance. Quindi uccidi i cuccioli, le femmine tornano fertili e ti riproduci.
+
+Se il vecchio e il nuovo alfa sono strettamente imparentati allora non ci sono infanticidi.
+
+In alcune specie quando arriva un nuovo maschio alfa il suo odore fa abortire le femmine (a meno che non ci sia la parentela tra i due maschi). Questo perche' fare la gestazione per poi avere i figli uccisi non ha senso e quindi abortisce diretto.
+
+Le femmine non si sacrificano per difendere i figli a meno che non siano vecchie, perche' tanto non potrebbero fare altri figli.
+
+In altre specie invece le femmine vanno in calore quando sono gia' incinte (pseudo-estrus) se arriva un nuovo maschio, cosi' scopano e quando partoriscono il maschio pensa sia suo figlio eheheh
+
+Quando un maschio alfa si scontra con un maschio beta, il beta per difendersi prende in ostaggio uno dei suoi figli.
+
+La gerarchia femminile funziona per cui la figlia della femmina alfa diventa la numero 2. E' una gerarchia nepotistica.
+
+Avere una figlia e' piu' safe per portare avanti i geni (hanno in media 1-5 figli), mentre se un figlio e' un rischio perche' al 90% non scopa, ma se ti becchi un figlio alfa quello si riproduce un sacco.
