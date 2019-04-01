@@ -79,3 +79,59 @@ Se l'attivita' e' costituita da almeno 3 passi allora e' definibile come caso d'
 ![Imgur](https://i.imgur.com/j3O21MN.png)
 
 ![Imgur](https://i.imgur.com/zLqFKG6.png)
+
+# Elaborazione
+
+- Viene scritto il nucleo del software
+- Vengono scoperti e definiti la maggior parte dei requisiti
+- Si attenuano i rischi maggiori
+
+Solitamente un caso d'uso e' troppo grande per essere implementato in una sola iterazione, quindi le varie funzionalita' vengono distribuite su varie iterazioni.
+
+## Documenti
+
+![Imgur](https://i.imgur.com/58ICVG9.png)
+
+## Modello di dominio
+
+Si usa UML.
+Non e' un modello software. Ma e' simile.
+
+![Imgur](https://i.imgur.com/mS1woFN.png)
+
+Praticamente e' uguale al modello ER lol.
+
+Bisogna:
+- trovare le classi concettuali
+- disegnarle come diagramma UML
+- aggiungere le associazioni
+- aggiungere gli attributi
+
+Pattern item-descriptor: differenziare con due classi un tipo di oggetto con la sua istanza (tipo item, prodotto in vendita)
+
+Gli attributi derivati li scrivi con '/' prima.
+
+Date le classi si possono derivare delle superclassi usando dei concetti in comune. Utile per la programmazione a oggetti.
+
+![Imgur](https://i.imgur.com/tmA6hdJ.png)
+
+Si possono creare delle classi di associazioni (relazioni) per aggiungere attributi all'associazione.
+
+![Imgur](https://i.imgur.com/uBck1cS.png)
+
+## Diagramma di sequenza di sistema (SSD)
+
+Non e' menzionato esplicitamente in UP.
+
+Sono diagrammi UML dei casi d'uso, quindi rappresentano gli input e gli output del sistema.
+
+Bisogna gestire:
+- eventi esterni (attori umani o sistemi informatici)
+- eventi temporali
+- guasti o eccezioni
+
+![Imgur](https://i.imgur.com/YHdRKxH.png)
+![Imgur](https://i.imgur.com/X1o6w2X.png)
+![Imgur](https://i.imgur.com/uctAkVB.png)
+![Imgur](https://i.imgur.com/sG0Y8F7.png)
+![Imgur](https://i.imgur.com/6rBbaZV.png)

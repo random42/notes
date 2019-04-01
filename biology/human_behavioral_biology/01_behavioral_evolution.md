@@ -134,4 +134,12 @@ Quando un maschio alfa si scontra con un maschio beta, il beta per difendersi pr
 
 La gerarchia femminile funziona per cui la figlia della femmina alfa diventa la numero 2. E' una gerarchia nepotistica.
 
-Avere una figlia e' piu' safe per portare avanti i geni (hanno in media 1-5 figli), mentre se un figlio e' un rischio perche' al 90% non scopa, ma se ti becchi un figlio alfa quello si riproduce un sacco.
+Avere una figlia e' piu' safe per portare avanti i geni (hanno in media 1-5 figli), mentre un figlio e' un rischio perche' al 90% non scopa, ma se ti becchi un figlio alfa quello si riproduce un sacco.
+
+Quando c'e' carestia nascono piu' femmine perche' avere un feto maschile comporta piu' spesa calorica.
+
+La poliandria (femmina con piu' maschi) e' quasi sempre adelphic polyandry, ovvero i maschi sono fratelli.
+
+## Intersexual competition
+
+Ci sono dei geni che se li prendi da un genitore fa quello che deve fare ma se li prendi dall'altro vengono silenziati. Se sono attivi dal padre tendono a rendere piu' grande e forte il feto, quelli dalla madre il contrario. Questo succede solo nelle *tournament species*.
