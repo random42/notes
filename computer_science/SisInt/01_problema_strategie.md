@@ -87,24 +87,3 @@ Termina quando le due ricerche si incontrano.
 Se ci sono tanti stati goal, si cerca uno stato di comodo, ovvero raggiungibile in un passo da tutti gli stati goal.
 
 Complessita' temporale e spaziale ottime: O(b<sup>d/2</sup>)
-
-## Strategie di ricerca informate
-
-Si usa una **funzione di valutazione** f(n) che comprende una **funzione euristica** h(n). h(n) e' una stima del costo per arrivare a uno stato goal. Si valutano i nodi della frontiera e si espandono prima quelli con piu' probabilita' di arrivare alla soluzione.
-
-### Ricerca greedy
-
-f(n) = h(n)
-
-Ha i problemi della ricerca in profondita'. Rischio di loop per vicoli ciechi.
-
-### A*
-
-T = insieme dei nodi obiettivo
-h(n) = costo minimo per arrivare a uno dei nodi obiettivo
-
-![Imgur](https://i.imgur.com/DgVQMYF.png)
-
-f(n) = g(n) + h(n)
-
-g(n) = costo minimo per raggiungere n dal nodo iniziale s
