@@ -25,3 +25,5 @@ Se si espandono i nodi piu' promettenti per primi si ha complessita' O(b<sup>m/2
 Bisogna tenere una **tabella delle trasposizioni** per gli stati raggiungibili con percorsi diversi, cosi' da non visitarli piu' di una volta.
 
 Poiche' non sempre si arriva a uno stato terminale serve una funzione di valutazione per capire la probabilita' di vittoria/pareggio/sconfitta di uno stato. Si valutano diverse proprieta' ognuna associata a un parametro di importanza e si valuta la posizione.
+
+Alcuni stati saranno valutati male e quindi bisogna capire quali sono e nel caso approfondirne la valutazione.
