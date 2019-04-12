@@ -13,9 +13,31 @@ Lo stato e' un assegnamento di valori. Il percorso e' l'ordine in cui vengono as
 
 **Criterio di preferenza**: vincolo non obbligatorio ma le soluzioni che lo soddisfano sono preferite.
 
-## Arc consistency
+Si usa di solito la **ricerca in profondita' con backtracking** in quanto con i vincoli si possono tagliare molti cammini e la profondita' della soluzione e' il numero delle variabili. Il problema sono le euristiche da usare.
 
-Un grafo di vincoli ha variabili come vertici e archi da x a y se y e' vincolata da x.
+![Imgur](https://i.imgur.com/HdmLiET.png)
+
+## Euristiche
+
+Si sceglie la variabile col minor numero di valori consistenti (**Minimum Remaining Values**) con l'assegnamento corrente. In caso di parita' si sceglie quella coinvolta in piu' vincoli.
+
+Scelta la variabile si sceglie il valore meno vincolante, ovvero quello per cui ci sono piu' valori possibili per le variabili non ancora assegnate.
+
+Possiamo rendere informata la ricerca togliendo percorsi non consistenti con i vincoli.
+
+# Proprieta' di consistenza
+
+Un grafo di vincoli ha variabili come vertici e archi da x a y se y e' vincolata a x.
+
+## Forward checking
+
+Si cancellano dal dominio i valori non consistenti delle variabili raggiungibili tramite vincolo dalla variabile appena assegnata.
+
+## Node consistency
+
+Controlla solamente i vincoli unari.
+
+## Arc consistency
 
 Un grafo di vincoli è **arc consistent** quando rispetta tutti i vincoli binari.
 
@@ -62,3 +84,12 @@ N e' il numero di risorse, Ak e' il numero di risorse assegnate all'attivita' k.
 Il backtracking non e' efficiente se arrivato a un vicolo cieco non capisce quale assegnamento lo ha causato.
 
 Sia A un assegnamento parziale consistente, sia X una variabile non ancora assegnata. Se l’assegnamento A U {X=vi} risulta inconsistente per qualsiasi valore vi appartenente al dominio di X si dice che A è un conflict set di X.
+
+Si aggiunge un assegnamento Y=a al conflict set di X quando l'assegnamento provoca una diminuizione del dominio di X.
+
+Per capire gli assegnamenti NOGOOD (ovvero parziali che falliranno) si fa cosi':
+- Non si puo' assegnare nulla alla variabile A
+- Si ritorna all'assegnamento dell'ultima variabile del conflict set di A, ad esempio B
+- Si aggiunge il conflict set di A a quello di B (tolto B ovviamente)
+
+Le nuove variabili del conflict set di B rappresentano vincoli impliciti.
