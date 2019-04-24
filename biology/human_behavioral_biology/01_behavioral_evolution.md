@@ -81,30 +81,28 @@ Quindi in questi casi e' meglio **Forgiving tit for tat**. Ovvero ti perdona la 
 
 Nel mondo reale non c'e' un solo game tra due animali ma ci sono diversi game con vari individui. Per cui capita che se qualcuno non partecipa in una certa task e sembra approfittarsi degli altri in realta' si scopre che ha un ruolo piu' rischioso in qualche altra task.
 
-## Differenze in due tipi di specie animali
+# Due tipologie di specie animali
 
-### Maschi molto piu' grandi delle femmine (tournament species)
+## Tournament species (maschi molto piu' grandi delle femmine)
 
 - Aggressione nei maschi
 - 95% della riproduzione in 5% dei maschi
 
-Le femmine selezionano il maschio piu' forte e aggressivo e si scopano tutte quello.
+Il maschio alfa (piu' forte e aggressivo) picchia gli altrie scopa tutte le femmine.
 
 - I maschi muoiono prima perche' hanno un corpo piu' dispendioso
 - 1% di figli gemelli (e poi spesso ne muore uno)
 - I maschi scopano qualunque femmina
 
-### Maschi stessa taglia delle femmine (pair-bonding/monogamous species)
+## Pair-bonding/Monogamous species (maschi stessa taglia delle femmine)
 
 - Ogni maschio ha circa 1 o 2 figli
-- Le femmine cercano un maschio che si curi di loro e della prole.
-
-Infatti per rimorchiare i maschi portano il cibo alle femmine.
+- Le femmine cercano un maschio che si curi di loro e della prole, infatti per rimorchiare i maschi portano il cibo alle femmine.
 
 - I maschi scelgono la femmina (e il contrario ovviamente)
 - Vivono uguale
 - Alta percentuale di figli gemelli perche' ci sono due genitori
-- Le femmine spesso dopo aver fatto i figli tradiscono perche' tanto c'e' il padre che bada a loro
+- Le femmine spesso dopo aver fatto i figli vanno con altri uomini perche' tanto c'e' il padre che bada a loro
 
 ### Umani
 
@@ -112,7 +110,7 @@ Gli umani sono a meta' tra questi due tipi. La maggior parte delle culture odier
 
 I due tipi di poligamia piu' diffusi nell'antichita' erano la poligamia economica in cui il maschio piu' ricco ha piu' mogli e la poligamia demografica in cui i maschi sono guerrieri o cacciatori e ne muoiono un botto, quindi scopano piu' donne.
 
-## Comportamenti con i cuccioli nelle tournament species
+## Comportamenti nelle tournament species
 
 `Le seguenti cose sono state principalmente osservate nei primati (scimmie). Non so quali altri animali presentano gli stessi comportamenti.`
 
@@ -120,7 +118,7 @@ I cuccioli hanno il bel faccino per non farsi uccidere e esser presi in cura.
 
 Ciononostante ci sono specie in cui i maschi uccidono i figli degli altri maschi perche' come detto prima l'obiettivo e' la propria riproduzione e questo e' un modo per ridurre la competizione.
 
-Questo succede nelle tournament species in cui il tempo in cui un maschio rimane alfa e' minore del tempo che ci mettono le femmine a crescere i cuccioli ed essere di nuovo fertili. Perche' se diventi maschio alfa e ci resti per un anno ma tutte le femmine hanno i figli del precedente alfa e devono ancora aspettare 2 anni per crescere i figli non hai molte chance. Quindi uccidi i cuccioli, le femmine tornano fertili e ti riproduci.
+Questo succede nelle tournament species in cui il tempo in cui un maschio rimane alfa e' minore del tempo che ci mettono le femmine a crescere i cuccioli ed essere di nuovo fertili. Se il nuovo maschio alfa arriva al momento sbagliato potrebbe non riprodursi affatto, quindi uccide i cuccioli e le femmine tornano fertili.
 
 Se il vecchio e il nuovo alfa sono strettamente imparentati allora non ci sono infanticidi.
 
@@ -143,3 +141,17 @@ La poliandria (femmina con piu' maschi) e' quasi sempre adelphic polyandry, ovve
 ## Intersexual competition
 
 Ci sono dei geni che se li prendi da un genitore fa quello che deve fare ma se li prendi dall'altro vengono silenziati. Se sono attivi dal padre tendono a rendere piu' grande e forte il feto, quelli dalla madre il contrario. Questo succede solo nelle *tournament species*.
+
+## Group selection
+
+Nelle piccole comunita' (A) accade dopo poco sono tutti imparentati e c'e' quindi aiuto reciproco, mentre nelle comunita' grandi non esiste (B). Quando una comunita' A entra in una B, A ha molti piu' vantaggi (protezione, cibo e quindi riproduzione). Allora per competere anche il resto di B deve cominciare a cooperare. Nasce la competizione fra gruppi, che puo' sfociare nel genocidio. Il concetto negli umani (non solo?) si e' esteso oltre alla parentela, benche' essa rimanga un concetto importante. Ad esempio nelle comunita' in cui c'e' una forte senso di legame, appartenenza e cooperazione la persone si considerano 'fratelli' (tipo i militari).
+
+Come provato nelle strategie di game theory, se nessuno coopera nessuno iniziera' mai a farlo perche' non conviene (B).
+
+## Modello evolutivo dei geni
+
+Caratteristica | Descrizione | Opposizione
+-|-|-
+Heritability | I tratti sono ereditabili |
+Adaptiveness | I tratti esistono perche' sono utili a sopravvivere/riprodursi | alcuni tratti sono inutili ma presenti per meccaniche fisiche o genetiche (tipo il mento)
+Gradualism | L'evoluzione e' graduale | in realta' ci sono periodi di grande cambiamento e periodi di stallo
