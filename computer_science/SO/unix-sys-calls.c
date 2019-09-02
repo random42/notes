@@ -18,7 +18,7 @@ void process() {
   int ppid = getppid(); // parent process ID
   //ogni processo ha un status in base a cosa sta facendo
 
-  int i = fork(); // torna -1 errore, 0 figlio, pid padre
+  int i = fork(); // torna -1 errore, 0 nel figlio, pid figlio nel padre
   switch(i) {
     case -1 : break; // Errore
     case 0 : break;  // codice figlio
