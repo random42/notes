@@ -1,5 +1,3 @@
-Non ho preso appunti stavolta, ma fortunatamente c'era un commento riassuntivo.
-
 monozygotic twins in same environment, mono chorionic vs bi placenta, IQ diffs,
 80s Benbow & Stanley, Johns Hopkins, on 40,000 gifted kids, Math SAT distributions 13:1 boys, Reader's Digest "Math gene".
 Environment was NOT the same.
